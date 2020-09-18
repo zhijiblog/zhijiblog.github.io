@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://zhijiblog.github.io/nlp/</loc>
+    <lastmod>2020-09-18T15:01:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhijiblog.github.io/</loc>
+    <lastmod>2020-09-18T15:01:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhijiblog.github.io/nlp/%E7%AE%80%E4%BB%8B/</loc>
+    <lastmod>2020-09-18T15:01:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhijiblog.github.io/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/</loc>
+    <lastmod>2020-09-18T10:04:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhijiblog.github.io/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/%E7%AE%80%E4%BB%8B/</loc>
+    <lastmod>2020-09-18T10:04:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhijiblog.github.io/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/%E7%83%AD%E9%97%A8%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91/</loc>
+    <lastmod>2020-09-18T10:04:15+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhijiblog.github.io/nlp/%E4%B8%BB%E8%A6%81%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2020-09-17T17:05:09+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhijiblog.github.io/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://zhijiblog.github.io/tags/</loc>
+  </url>
+  
+</urlset>
