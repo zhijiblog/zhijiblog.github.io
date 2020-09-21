@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>知几小博客</title>
@@ -5,104 +6,92 @@
     <description>Recent content on 知几小博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Sep 2020 15:01:39 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2020 15:01:39 +0800</lastBuildDate><atom:link href="https://zhijiblog.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简介</title>
+      <link>https://zhijiblog.github.io/nlp/nlp%E7%AE%80%E4%BB%8B/%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Fri, 18 Sep 2020 15:01:39 +0800</pubDate>
+      
+      <guid>https://zhijiblog.github.io/nlp/nlp%E7%AE%80%E4%BB%8B/%E7%AE%80%E4%BB%8B/</guid>
+      <description>SnowNLP的技术原理 什么是NLP（Natural Language Processing，自然语言处理）
+​ NLP是利用计算机为工具，对人类特有的书面形式和口头形式的自然语言的信息进行各种类型处理和加工的技术。简单来说就是把人类的语言转化为机器语言，再通过计算机进行进一步处理。
+目前NLP应用领域很多，在机器翻译（Google翻译）、信息检索（搜索引擎）、信息收取（关键字提取）、文本分类（本次项目内容）、情感分类（好评/差评）、问答系统（Siri、小爱同学）、推荐系统（网易云日推）、阅读理解等领域有着非常广泛的应用。
+下面我就这次项目的几个关键技术做详细介绍。
+SnowNLP简介 SnowNLP是一个python写的类库，可以方便的处理中文文本内容，是受到了TextBlob的启发而写的。由于现在大部分的自然语言处理库基本都是针对英文的，为了方便处理中文，作者才编写了这个类库。其支持的中文自然语言处理功能如下：
+ 中文分词 词性标注 情感分析 文本分类 转换成拼音 繁体转简体 提取文本关键词 提取文本摘要  本项目中主要用到了文本分类的功能，具体的算法原理会在下面介绍。
+在文本分类之前，还需要对输入的文本进行一些预处理的操作，下面按照顺序来介绍。
+文本分词 自然语言处理的第一步就是**“断句”**，我们把它叫做**分词**，也就是把一个完整的句子拆分成一个个不可再分的词语。
+​ 中文分词的一个例子
+文本分词有很多成熟的算法，有些算法比较复杂，这里就不做介绍了。我就以一个比较容易理解的方法做讲解。这个分词方法叫做基于字符串匹配的分词方法。具体过程如下：
+ 首先建立一个词典，可以把它理解成《现代汉语词典》，为了让我们后续分词的时候“有据可依” 当需要对一个句子进行分词时，首先将句子拆分成多个部分，将每一个部分在词典中做查找，如果找到，分词成功，否则继续拆分匹配直到成功。 对于多个结果，我们选择词数最少的那个。这样是为了不把句子拆得太散。比如下图这个例子，我们在词典中已经找到了“计算语言学”这个词，那么我们不会再把它拆成“计算”，“语言”，“学”这三个词。  ​ 在上例中，我们在词典中分别找出了句子中的这几个词。在保证总次数最少的情况下，就完成了这个分词的任务。
+去除停用词（stop-word） 为节省存储空间和提高搜索效率，在处理自然语言数据之前，我们会自动过滤掉一些对理解文本没有作用的****字或词，例如“了”，“的”，“一个”。我们把这些词叫做**“停用词”**（stop words）。停用词在句子中没有太大的实际意义，因此我们在处理的时候直接把它们**丢弃**。
+​ 一些停用词
+去除句子中的停用词的方法比较直接。我们会根据已有的知识，建立一张记录停用词的停用词表。这张表存储了汉语中所有的停用词。当我们做完分词之后，把每一个分好的词在这张表里做查找，如果在表里找到了这个词，就直接在原句中把这个词删掉。例如上面那个句子
+·	计算语言学/课程/是/两个/课时
+在去除停用词的时候，我们在停用词表里找到了“是”这个词。那么我们就把它删掉，最后结果就变成了：
+· 计算语言学/课程/两个/课时
+这样，留下来的每个词都有实际含义，可以让我们后面的处理变得更加高效。
+词性标注 词性标注是指为分词结果中的每个单词标注一个正确的词性的程序，也即确定每个词是名词、动词、形容词或者其他词性的过程。
+词性标注是为了让机器更好的理解文本。例如在这个项目中，我们判断业务类提问的一个重要标准就是判断名词。如果提问中包含一些游戏中特有的名词，例如降落伞、P城、枪械，那么就有很大的概率为业务类提问。
+需要注意的是在，汉语中，大多数词语只有一个词性，或者出现频次最高的词性远远高于第二位的词性。据说单纯选取最高频词性，就能实现80%准确率的中文词性标注程序。
+为了进一步提高准确率，还有如下几种方法：
+（1）基于最大熵的词性标注
+（2）基于统计最大概率输出词性
+（3）基于HMM的词性标注
+经过上述的NLP处理之后，我们把汉语的文本初步转换成机器可识别的词块。下一步就正式来介绍本项目涉及到的主算法。</description>
+    </item>
     
-        <atom:link href="https://zhijiblog.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简介</title>
+      <link>https://zhijiblog.github.io/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/%E7%AE%80%E4%BB%8B/%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Fri, 18 Sep 2020 10:04:31 +0800</pubDate>
+      
+      <guid>https://zhijiblog.github.io/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/%E7%AE%80%E4%BB%8B/%E7%AE%80%E4%BB%8B/</guid>
+      <description>项目中使用的主要算法为朴素贝叶斯（Naive Bayes）。贝叶斯方法是一个直接且高效的文本分类方法，主要的思想是条件概率，就是说，在给定一个句子的情况下，我们要计算出它为闲聊类的概率和业务类的概率，并比较二者的大小。概率更大的就为我们的预测结果。
+那么问题就转化成了计算一个句子为闲聊或业务的概率。我们以这样一个句子S为例：
+· AKM这把枪的后座力大吗？
+想要计算这个句子为闲聊或业务的概率，我们需要有两个语料库，分别为闲聊的语料库和业务的语料库。语料库里包含大量我们已经分好类的句子，这就相当于一个知识库，我们可以把它理解成人类的大脑。当我们看到一条句子，我们会在脑内回忆这个句子是作为闲聊出现的次数多，还是业务出现的次数多。也就是把概率转化成频率：
+P( 闲聊 | S ) = S在闲聊类语料库里出现的次数 / 闲聊库语料数量；
+P( 业务 | S ) = S在业务类语料库里出现的次数 / 业务库语料数量
+这两条公式直观上理解，就是在我们已有的经验里面，越经常在某个语料库里出现，就越可能属于这个语料库。
+这样计算当然是很简单的，但是存在一个很大的问题：语料库中很难精准匹配上这个句子。虽然语料库非常庞大，但是对于同一个意思，存在很多种表达方式来描述，也就是说**语料库里可能会很多与s意思相近的句子，但是表达方式不一样。**例如“AKM的后座力大不大”， “AKM后座力怎么样”。在统计的时候机器只会去匹配完全相同的句子，这样的话，最后得到的结果就不准确了。
+为了解决这个问题，我们就要用到朴素贝叶斯的想法。这个想法简单来说就是：把句子拆开，计算出句子中每个词在语料库中出现的频率，再将它们连乘，当作整个句子的概率。这样就可以规避上面的问题。因为词语和句子不同，虽然存在句子多种表达方式，但是核心的词语只有一种。在上面的例子中，“AKM”，“**后座力”**这几个词都出现了。
+这里就要用到（二）中提到的NLP分词技术了。我们把语料库和S都做分词，并过滤掉停用词。此时S只剩下这四个词：
+AKM / 枪 / 后座力 / 大
+这时我们计算P( 闲聊 | S )，就变成下面这四个频率的乘积：
+P( 闲聊 | S ) = (“AKM”在闲聊类语料库里出现的次数 / 闲聊库词语数量) *
+(“枪”在闲聊类语料库里出现的次数 / 闲聊库词语数量) *
+(“后座力”在闲聊类语料库里出现的次数 / 闲聊库词语数量) *
+(“大”在闲聊类语料库里出现的次数 / 闲聊库词语数量)
+可以发现，经过这样的处理，成功解决了上面提到的“句子稀疏”问题。其实我们从人的角度也可以理解。当我们人类看到一句话的时候，也是通过句子中的关键词来把握句子的意思的。在这个算法中，我们可以理解为就是把一句话拆开，把里面的关键词放进一个袋子里。这叫做**“词袋子模型”。**
+​ 词袋子模型中，词与词之间的顺序不会被纳入考虑。例如“武松打死了老虎”与“老虎打死了武松”被它认作一个意思。这是模型的一个缺点，但是在我们这个项目中并不存在这个问题。因为不会有句子只通过语序的调整就能从闲聊变成业务，说到底还是以词语本身为主，因此这个算法是高效且适用的。</description>
+    </item>
     
+    <item>
+      <title>热门研究方向</title>
+      <link>https://zhijiblog.github.io/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/%E7%83%AD%E9%97%A8%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91/%E7%83%AD%E9%97%A8%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91/</link>
+      <pubDate>Fri, 18 Sep 2020 10:04:15 +0800</pubDate>
+      
+      <guid>https://zhijiblog.github.io/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/%E7%83%AD%E9%97%A8%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91/%E7%83%AD%E9%97%A8%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91/</guid>
+      <description>2.1 环境搭建 目前运用朴素贝叶斯实现的文本分类框架有很多，例如TextBlob、SnowNLP、PaddleHub等。本次项目使用了SnowNLP这个框架。因为这个框架是针对中文文本编写的，且使用起来比较方便。SnowNLP的源码参见https://github.com/isnowfy/snownlp。
+具体使用框架的时候，首先需要获取业务类语料库和闲聊类语料库。该项目使用的语料库是从有记录以来，所有的已分类好的提问记录。其中业务类包含437246条真实语料，闲聊类包含149636条真实语料。这两个语料库需要分成两个txt文件保存至项目目录下：
+   业务类.txt 闲聊类.txt     升级段位可以获得头像框吗 熊出没之春日对对碰是什么类型的动漫   屏蔽的好友在哪里找回来 007皇家赌场的拍摄日期是那年？   好友之间怎么观战 马绍尔群岛的首都是哪里？   怎么切换回原来的帐号 吴宗宪的出生地是   历史战绩能保存几天 真三国无双7中有几个势力？   两人组队怎么退出房间 祝你做个好梦，睡个好觉。   圆形升级核心从哪儿获得 我说要考试了怎么办   …… ……    2.2 训练集优化 这些原始的语料库只经过了简单的去重，保证了彼此之间不会重复。为了进一步去除语料库中的重复内容，考虑前面提到的去除停用词方法，把句子里的停用词全部去掉，再做一次去重。这样能够进一步降低语料库的冗余性。例如如下两个句子：
+ 绝版 / 纪念 / 头像框 / 怎么 / 获得 绝版 / 纪念 / 头像框 / 哪里 / 可以 / 获得  两个句子中标红的词语均为停用词，删除之后两个句子都变成了：</description>
+    </item>
     
-    
-        <item>
-        <title>简介</title>
-        <link>https://zhijiblog.github.io/nlp/%E7%AE%80%E4%BB%8B/</link>
-        <pubDate>Fri, 18 Sep 2020 15:01:39 +0800</pubDate>
-        
-        <guid>https://zhijiblog.github.io/nlp/%E7%AE%80%E4%BB%8B/</guid>
-        <description>知几小博客 https://zhijiblog.github.io/nlp/%E7%AE%80%E4%BB%8B/ -&lt;h1 id=&#34;snownlp的技术原理&#34;&gt;&lt;strong&gt;SnowNLP的技术原理&lt;/strong&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;什么是NLP（Natural Language Processing，自然语言处理）&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;​            &lt;img src=&#34;https://qqadapt.qpic.cn/txdocpic/0/bb2934e8e37b952e1f6ab5f3dbc71d94/0?w=895&amp;amp;h=749&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
-&lt;p&gt;NLP是利用计算机为工具，对人类特有的书面形式和口头形式的自然语言的信息进行各种类型处理和加工的技术。简单来说就是把&lt;strong&gt;人类的语言转化为机器语言，再通过计算机进行进一步处理。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;目前NLP应用领域很多，在机器翻译（Google翻译）、信息检索（搜索引擎）、信息收取（关键字提取）、&lt;strong&gt;文本分类（本次项目内容）&lt;/strong&gt;、情感分类（好评/差评）、问答系统（Siri、小爱同学）、推荐系统（网易云日推）、阅读理解等领域有着非常广泛的应用。&lt;/p&gt;
-&lt;p&gt;下面我就这次项目的几个关键技术做详细介绍。&lt;/p&gt;
-&lt;h3 id=&#34;snownlp简介&#34;&gt;&lt;strong&gt;SnowNLP简介&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;SnowNLP是一个python写的类库，可以方便的处理中文文本内容，是受到了&lt;a href=&#34;https://github.com/sloria/TextBlob&#34;&gt;TextBlob&lt;/a&gt;的启发而写的。由于现在大部分的自然语言处理库基本都是针对英文的，为了方便处理中文，作者才编写了这个类库。其支持的中文自然语言处理功能如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;中文分词&lt;/li&gt;
-&lt;li&gt;词性标注&lt;/li&gt;
-&lt;li&gt;情感分析&lt;/li&gt;
-&lt;li&gt;文本分类&lt;/li&gt;
-&lt;li&gt;转换成拼音&lt;/li&gt;
-&lt;li&gt;繁体转简体&lt;/li&gt;
-&lt;li&gt;提取文本关键词&lt;/li&gt;
-&lt;li&gt;提取文本摘要&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;本项目中主要用到了文本分类的功能，具体的算法原理会在下面介绍。&lt;/p&gt;
-&lt;p&gt;在文本分类之前，还需要对输入的文本进行一些预处理的操作，下面按照顺序来介绍。&lt;/p&gt;
-&lt;h3 id=&#34;文本分词&#34;&gt;&lt;strong&gt;文本分词&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;自然语言处理的第一步就是**“断句”**，我们把它叫做**分词**，也就是把一个完整的句子拆分成一个个不可再分的词语。&lt;/p&gt;
-&lt;p&gt;​            &lt;img src=&#34;https://qqadapt.qpic.cn/txdocpic/0/83bef2acdb1da0f832b6141f5deb1252/0?w=500&amp;amp;h=412&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
-&lt;p&gt;中文分词的一个例子&lt;/p&gt;
-&lt;p&gt;文本分词有很多成熟的算法，有些算法比较复杂，这里就不做介绍了。我就以一个比较容易理解的方法做讲解。这个分词方法叫做&lt;strong&gt;基于字符串匹配的分词方法&lt;/strong&gt;。具体过程如下：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;首先建立一个&lt;strong&gt;词典&lt;/strong&gt;，可以把它理解成《现代汉语词典》，为了让我们后续分词的时候“有据可依”&lt;/li&gt;
-&lt;li&gt;当需要对一个句子进行分词时，首先将句子&lt;strong&gt;拆分成多个部分&lt;/strong&gt;，将每一个部分在词典中做&lt;strong&gt;查找&lt;/strong&gt;，如果找到，分词成功，否则继续拆分匹配直到成功。&lt;/li&gt;
-&lt;li&gt;对于多个结果，我们选择&lt;strong&gt;词数最少&lt;/strong&gt;的那个。这样是为了不把句子拆得太散。比如下图这个例子，我们在词典中已经找到了“计算语言学”这个词，那么我们不会再把它拆成“计算”，“语言”，“学”这三个词。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;​            &lt;img src=&#34;https://qqadapt.qpic.cn/txdocpic/0/13324cebbe29749cbde38f06839405f0/0?w=931&amp;amp;h=344&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
-&lt;p&gt;在上例中，我们在词典中分别找出了句子中的这几个词。在保证总次数最少的情况下，就完成了这个分词的任务。&lt;/p&gt;
-&lt;h3 id=&#34;去除停用词stop-word&#34;&gt;&lt;strong&gt;去除停用词（stop-word）&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;为节省存储空间和提高搜索效率，在处理自然语言数据之前，我们会&lt;strong&gt;自动过滤掉一些&lt;strong&gt;&lt;strong&gt;对理解文本没有作用&lt;/strong&gt;&lt;/strong&gt;的****字或词&lt;/strong&gt;，例如“了”，“的”，“一个”。我们把这些词叫做**“停用词”**（stop words）。停用词在句子中没有太大的实际意义，因此我们在处理的时候直接把它们**丢弃**。&lt;/p&gt;
-&lt;p&gt;​            &lt;img src=&#34;https://qqadapt.qpic.cn/txdocpic/0/d25120e4ffd841e1b2dce31bb84f7c5a/0?w=649&amp;amp;h=283&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
-&lt;p&gt;一些停用词&lt;/p&gt;
-&lt;p&gt;去除句子中的停用词的方法比较直接。我们会根据已有的知识，建立一张记录停用词的&lt;strong&gt;停用词表&lt;/strong&gt;。这张表存储了汉语中所有的停用词。当我们做完分词之后，把每一个&lt;strong&gt;分好的词&lt;/strong&gt;在这张表里做&lt;strong&gt;查找&lt;/strong&gt;，如果在表里找到了这个词，就直接在原句中把这个词&lt;strong&gt;删掉&lt;/strong&gt;。例如上面那个句子&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;·	计算语言学/课程/&lt;strong&gt;&lt;strong&gt;是&lt;/strong&gt;&lt;/strong&gt;/两个/课时&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;在去除停用词的时候，我们在停用词表里找到了“是”这个词。那么我们就把它删掉，最后结果就变成了：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;· 计算语言学/课程/两个/课时&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;这样，留下来的每个词都有实际含义，可以让我们后面的处理变得更加高效。&lt;/p&gt;
-&lt;h3 id=&#34;词性标注&#34;&gt;&lt;strong&gt;词性标注&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;词性标注是指为分词结果中的每个单词标注一个正确的&lt;strong&gt;词性&lt;/strong&gt;的程序，也即确定每个词是&lt;strong&gt;名词、动词、形容词或者其他词性&lt;/strong&gt;的过程。&lt;/p&gt;
-&lt;p&gt;词性标注是为了让机器更好的理解文本。例如在这个项目中，我们判断业务类提问的一个重要标准就是判断&lt;strong&gt;名词&lt;/strong&gt;。如果提问中包含一些游戏中特有的名词，例如降落伞、P城、枪械，那么就有很大的概率为业务类提问。&lt;/p&gt;
-&lt;p&gt;需要注意的是在，汉语中，大多数词语只有一个词性，或者出现频次最高的词性远远高于第二位的词性。据说单纯选取最高频词性，就能实现80%准确率的中文词性标注程序。&lt;/p&gt;
-&lt;p&gt;为了进一步提高准确率，还有如下几种方法：&lt;/p&gt;
-&lt;p&gt;（1）基于最大熵的词性标注&lt;/p&gt;
-&lt;p&gt;（2）基于统计最大概率输出词性&lt;/p&gt;
-&lt;p&gt;（3）基于HMM的词性标注&lt;/p&gt;
-&lt;p&gt;经过上述的NLP处理之后，我们把汉语的文本初步转换成机器可识别的词块。下一步就正式来介绍本项目涉及到的主算法。&lt;/p&gt;
-- https://zhijiblog.github.io/nlp/%E7%AE%80%E4%BB%8B/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>简介</title>
-        <link>https://zhijiblog.github.io/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/%E7%AE%80%E4%BB%8B/</link>
-        <pubDate>Fri, 18 Sep 2020 10:04:31 +0800</pubDate>
-        
-        <guid>https://zhijiblog.github.io/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/%E7%AE%80%E4%BB%8B/</guid>
-        <description>知几小博客 https://zhijiblog.github.io/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/%E7%AE%80%E4%BB%8B/ -- https://zhijiblog.github.io/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/%E7%AE%80%E4%BB%8B/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>热门研究方向</title>
-        <link>https://zhijiblog.github.io/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/%E7%83%AD%E9%97%A8%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91/</link>
-        <pubDate>Fri, 18 Sep 2020 10:04:15 +0800</pubDate>
-        
-        <guid>https://zhijiblog.github.io/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/%E7%83%AD%E9%97%A8%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91/</guid>
-        <description>知几小博客 https://zhijiblog.github.io/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/%E7%83%AD%E9%97%A8%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91/ -- https://zhijiblog.github.io/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/%E7%83%AD%E9%97%A8%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>主要技术</title>
-        <link>https://zhijiblog.github.io/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/%E4%B8%BB%E8%A6%81%E6%8A%80%E6%9C%AF/</link>
-        <pubDate>Thu, 17 Sep 2020 17:05:09 +0800</pubDate>
-        
-        <guid>https://zhijiblog.github.io/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/%E4%B8%BB%E8%A6%81%E6%8A%80%E6%9C%AF/</guid>
-        <description>知几小博客 https://zhijiblog.github.io/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/%E4%B8%BB%E8%A6%81%E6%8A%80%E6%9C%AF/ -- https://zhijiblog.github.io/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/%E4%B8%BB%E8%A6%81%E6%8A%80%E6%9C%AF/ - </description>
-        </item>
-    
+    <item>
+      <title>主要技术</title>
+      <link>https://zhijiblog.github.io/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/%E4%B8%BB%E8%A6%81%E6%8A%80%E6%9C%AF/%E4%B8%BB%E8%A6%81%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Thu, 17 Sep 2020 17:05:09 +0800</pubDate>
+      
+      <guid>https://zhijiblog.github.io/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/%E4%B8%BB%E8%A6%81%E6%8A%80%E6%9C%AF/%E4%B8%BB%E8%A6%81%E6%8A%80%E6%9C%AF/</guid>
+      <description>定制游戏专属词典
+对于本项目而言，我们需要把提问分成闲聊类和业务类。这和一般的文本二分类（正向、负向）有着很大的区别。区分一个提问是否属于和平精英的业务类问题，通常需要判断它是否包含一些游戏中的专有名词，例如枪械的名称、游戏中的地点等。尤其是和平精英这款游戏，用户量非常庞大，场景、道具比较复杂。怎样批量、完善地构建一个专属于本游戏的词典，是一个富有挑战性的问题。
+游戏运营节奏频繁，需要及时更新模型
+作为一款国民级的手游，游戏本身的运营节奏就很频繁，新版本会不断更新。版本更新客观上会带来很多新词汇，例如新的枪械，新的皮肤。如果不对模型做迭代，就无法识别出这些新的活动和版本。更重要的是，用户本身就会对新版本有很多问题。新版本上线的时间恰好也是用户问题激增的一段时间，如果不能及时对预测模型做更新，将不利于用户体验。
+游戏玩家有自己的专属语言，不断冒出新“梗”，需要不断做新词发现
+除了游戏版本的迭代会带来新词，用户自身也会带来新词。和平精英的游戏圈本质上是一个亚文化圈，圈子里的玩家会有自己的专属语言，例如一些枪械的昵称：“喷子”，“狗杂”，以及一些别的特色语言“苟进决赛圈”，“莽夫”，“老六行为”等等。这些语言并非游戏内提供的语言，而是玩家经过各种交流，在圈子内被广泛认同并使用的语言，具有特殊性。更重要的是，随着游戏版本更新，越来越多的新“梗”也在不断涌现出来。如何敏锐地嗅探出这些新语言、新词汇，也是本项目的一个难点所在。</description>
+    </item>
     
   </channel>
-</rss> 
+</rss>
