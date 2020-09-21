@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-09-21T16:05:49 CST">
+<meta name="revised" content="2020-09-21T16:09:39 CST">
 <meta name="description" content="">
 
 
@@ -122,22 +122,22 @@
 
 <ul class="menu">
 
-    <li data-nav-id="https://zhijiblog.github.io/nlp/" class="dd-item
+    <li data-nav-id="https://zhijiblog.github.io/nlp/" class="dd-item haschildren
         item_level_$level
         ">
 
       
       
       
-      
+      <i class="fas fa-chevron-right ddexp"></i>
         
       
           <a href="/nlp/">NLPs</a>
       
-    </li>
-    
+        <ul>
+              
 
-    <li data-nav-id="https://zhijiblog.github.io/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/" class="dd-item
+    <li data-nav-id="https://zhijiblog.github.io/nlp/nlp%E7%AE%80%E4%BB%8B/" class="dd-item
         item_level_$level
         ">
 
@@ -145,14 +145,31 @@
       
       
       
+          <a href="/nlp/nlp%E7%AE%80%E4%BB%8B/">NLP简介</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://zhijiblog.github.io/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      <i class="fas fa-chevron-right ddexp"></i>
         
       
           <a href="/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/">对话系统s</a>
       
-    </li>
-    
+        <ul>
+              
 
-    <li data-nav-id="https://zhijiblog.github.io/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/" class="dd-item parent active
+    <li data-nav-id="https://zhijiblog.github.io/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/%E7%83%AD%E9%97%A8%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91/" class="dd-item
         item_level_$level
         ">
 
@@ -160,10 +177,60 @@
       
       
       
+          <a href="/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/%E7%83%AD%E9%97%A8%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91/">NLP简介</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://zhijiblog.github.io/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/%E7%AE%80%E4%BB%8B/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/%E7%AE%80%E4%BB%8B/">NLP简介</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://zhijiblog.github.io/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/" class="dd-item parent active haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <i class="fas fa-chevron-down ddexp"></i>
         
       
           <a href="/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/">语音识别s</a>
       
+        <ul>
+              
+
+    <li data-nav-id="https://zhijiblog.github.io/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/%E4%B8%BB%E8%A6%81%E6%8A%80%E6%9C%AF/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/%E4%B8%BB%E8%A6%81%E6%8A%80%E6%9C%AF/">NLP简介</a>
+      
+        
+      
+    </li>
+        </ul>
     </li>
     
 
@@ -210,7 +277,7 @@
   
     <li class="breadcrumb-item active">
       
-        主要技术
+        NLP简介
       
     </li>
 
@@ -231,7 +298,7 @@
 		
 
 		
-			<h1>语音识别s<span>主要技术</span></h1>
+			<h1>NLP简介</h1>
         
 
 			
@@ -242,7 +309,7 @@
 				<nav class="subpages">
 	            		
 	        			
-	            	<li class="active">
+	            	<li >
 	            		<a title="$pagetitle" href="/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/%E4%B8%BB%E8%A6%81%E6%8A%80%E6%9C%AF/%E4%B8%BB%E8%A6%81%E6%8A%80%E6%9C%AF/">主要技术</a>
 	            	</li>
 	        	</nav> 
@@ -264,13 +331,8 @@
 	
 	
 
-	<div class="content"><p><strong>定制游戏专属词典</strong></p>
-<p>对于本项目而言，我们需要把提问分成闲聊类和业务类。这和一般的文本二分类（正向、负向）有着很大的区别。区分一个提问是否属于和平精英的业务类问题，通常需要判断它是否包含一些游戏中的专有名词，例如枪械的名称、游戏中的地点等。尤其是和平精英这款游戏，用户量非常庞大，场景、道具比较复杂。怎样批量、完善地构建一个专属于本游戏的词典，是一个富有挑战性的问题。</p>
-<p><strong>游戏运营节奏频繁，需要及时更新模型</strong></p>
-<p>作为一款国民级的手游，游戏本身的运营节奏就很频繁，新版本会不断更新。版本更新客观上会带来很多新词汇，例如新的枪械，新的皮肤。如果不对模型做迭代，就无法识别出这些新的活动和版本。更重要的是，用户本身就会对新版本有很多问题。新版本上线的时间恰好也是用户问题激增的一段时间，如果不能及时对预测模型做更新，将不利于用户体验。</p>
-<p><strong>游戏玩家有自己的专属语言，不断冒出新“梗”，需要不断做新词发现</strong></p>
-<p>除了游戏版本的迭代会带来新词，用户自身也会带来新词。和平精英的游戏圈本质上是一个亚文化圈，圈子里的玩家会有自己的专属语言，例如一些枪械的昵称：“喷子”，“狗杂”，以及一些别的特色语言“苟进决赛圈”，“莽夫”，“老六行为”等等。这些语言并非游戏内提供的语言，而是玩家经过各种交流，在圈子内被广泛认同并使用的语言，具有特殊性。更重要的是，随着游戏版本更新，越来越多的新“梗”也在不断涌现出来。如何敏锐地嗅探出这些新语言、新词汇，也是本项目的一个难点所在。</p>
-</div>
+	<div class="content">
+      <meta http-equiv = "refresh" content = "0; url = /%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/%E4%B8%BB%E8%A6%81%E6%8A%80%E6%9C%AF/%E4%B8%BB%E8%A6%81%E6%8A%80%E6%9C%AF/"/></div>
 
 
 	 
@@ -319,7 +381,7 @@
 			
 		      <li>
 		          <i class='fas fa-calendar'></i>
-		          Last update on 17 September 2020
+		          Last update on 21 September 2020
 		      </li>
 		    
 		    

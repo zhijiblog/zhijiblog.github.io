@@ -3,20 +3,20 @@ body:not(.render_raw) {
   font-family: "Montserrat",sans-serif;
   font-weight: 400;
   line-height: 1.5;
-  color: #84441f; }
+  color: #a3ab69; }
   body:not(.render_raw) a {
-    color: #70391a;
+    color: #98a05a;
     text-decoration: none;
     background-color: transparent; }
   body:not(.render_raw) header {
-    background-color: #d07039;
+    background-color: #cbcfaa;
     border-bottom: 2px solid gray;
     box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.1), 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
     justify-content: space-between;
     align-items: stretch;
     color: white; }
     body:not(.render_raw) header a {
-      color: #2f8fc6; }
+      color: #343055; }
     body:not(.render_raw) header > div {
       display: flex;
       flex-direction: row;
@@ -42,7 +42,7 @@ body:not(.render_raw) {
         body:not(.render_raw) header nav.shortcuts li .fa {
           margin-right: 0.5rem; }
         body:not(.render_raw) header nav.shortcuts li a {
-          color: #3999d0;
+          color: #3c3762;
           padding: 0 1rem;
           font-weight: bold;
           font-size: 90%; }
@@ -68,8 +68,8 @@ body:not(.render_raw) {
           letter-spacing: -1px;
           display: block;
           margin-bottom: 14px;
-          border-bottom: 1px dotted #f7e7de;
-          color: #d07039;
+          border-bottom: 1px dotted white;
+          color: #cbcfaa;
           font-variant: small-caps; }
         body:not(.render_raw) article section.right-menu > div nav > ul {
           padding: 0px 0px 0px 0px;
@@ -92,11 +92,11 @@ body:not(.render_raw) {
       body:not(.render_raw) article section.right-menu .Actions {
         font-size: 75%; }
   body:not(.render_raw) footer {
-    background-color: #d07039;
-    color: #2f8fc6;
+    background-color: #cbcfaa;
+    color: #343055;
     padding: 3rem; }
     body:not(.render_raw) footer a {
-      color: #2f8fc6; }
+      color: #343055; }
 
 article section.page {
   background-color: inherit; }
@@ -117,11 +117,11 @@ article section.page {
           display: inline-block;
           padding-right: .5rem;
           padding-left: .5rem;
-          color: #84441f;
+          color: #a3ab69;
           content: "⊸"; }
         article section.page #breadcrumb ol li a {
-          color: #84441f;
-          border-bottom: 1px dotted #e9bba0;
+          color: #a3ab69;
+          border-bottom: 1px dotted #fdfdfc;
           padding-bottom: 4px;
           padding-right: 0px; }
         article section.page #breadcrumb ol li.active:after {
@@ -151,23 +151,23 @@ article section.page {
       min-width: 50px; }
       article section.page nav.subpages li a {
         font-size: 90%;
-        color: #ffb58a; }
+        color: #fefefa; }
       article section.page nav.subpages li:not(:first-child):before {
         display: inline-block;
         margin-left: 0.4em;
         padding-right: .4rem;
-        color: #fab68e;
+        color: #fefefb;
         content: "|"; }
       article section.page nav.subpages li.active {
         font-weight: bold; }
     article section.page nav.subpages li:first-child:before {
       content: "└ ";
-      color: #fab68e; }
+      color: #fefefb; }
   article section.page div.jump-to-section {
     font-size: smaller;
-    color: #d07039; }
+    color: #cbcfaa; }
     article section.page div.jump-to-section ul li a {
-      color: #ffb58a; }
+      color: #fefefb; }
     article section.page div.jump-to-section nav {
       background-color: white; }
   article section.page div.chevrons {
@@ -208,7 +208,7 @@ article section.page {
   article section.page h1:first-of-type {
     font-size: 2.6rem;
     margin-top: 1.5rem !important;
-    color: #d07039;
+    color: #cbcfaa;
     margin-bottom: 0px;
     line-height: 1.05;
     letter-spacing: -.05em;
@@ -219,7 +219,7 @@ article section.page {
       article section.page h1:first-of-type span:before {
         padding-left: .75rem;
         padding-right: .75rem;
-        color: #d07039;
+        color: #cbcfaa;
         content: "⊷"; }
 
 article section.page div.content {
@@ -230,11 +230,11 @@ article section.page div.content {
     top: -7rem;
     visibility: hidden; }
   article section.page div.content a {
-    color: #ffb58a;
+    color: #fefffa;
     font-weight: 500;
     text-decoration: underline; }
   article section.page div.content h1 {
-    color: #da8e62;
+    color: #dfe2cb;
     font-size: 30px;
     font-variant-ligatures: none;
     font-weight: 700;
