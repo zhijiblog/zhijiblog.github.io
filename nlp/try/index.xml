@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Try on 知几小博客</title>
+    <link>https://zhijiblog.github.io/nlp/try/</link>
+    <description>Recent content in Try on 知几小博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Dec 2020 11:54:06 +0800</lastBuildDate><atom:link href="https://zhijiblog.github.io/nlp/try/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Try</title>
+      <link>https://zhijiblog.github.io/nlp/try/try/</link>
+      <pubDate>Thu, 10 Dec 2020 11:54:07 +0800</pubDate>
+      
+      <guid>https://zhijiblog.github.io/nlp/try/try/</guid>
+      <description>11</description>
+    </item>
+    
+  </channel>
+</rss>
