@@ -6,7 +6,16 @@
     <description>Recent content on 知几小博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Dec 2020 15:01:56 +0800</lastBuildDate><atom:link href="https://zhijiblog.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Dec 2020 16:25:08 +0800</lastBuildDate><atom:link href="https://zhijiblog.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>其他分享</title>
+      <link>https://zhijiblog.github.io/%E5%85%B6%E4%BB%96/%E5%85%B6%E4%BB%96%E5%88%86%E4%BA%AB/%E5%85%B6%E4%BB%96%E5%88%86%E4%BA%AB/</link>
+      <pubDate>Mon, 14 Dec 2020 16:25:08 +0800</pubDate>
+      
+      <guid>https://zhijiblog.github.io/%E5%85%B6%E4%BB%96/%E5%85%B6%E4%BB%96%E5%88%86%E4%BA%AB/%E5%85%B6%E4%BB%96%E5%88%86%E4%BA%AB/</guid>
+      <description>[[menu.main]] url = &amp;ldquo;/心得分享&amp;rdquo; name = &amp;ldquo;心得分享&amp;rdquo; weight = 6</description>
+    </item>
+    
     <item>
       <title>环境配置</title>
       <link>https://zhijiblog.github.io/nlp/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
