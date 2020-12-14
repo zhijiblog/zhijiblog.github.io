@@ -33,7 +33,7 @@ git安装教程：https://www.cnblogs.com/xueweisuoyong/p/11914045.html
 一、环境部署 本博客使用Hugo框架进行搭建，需要预先安装Hugo框架并添加至环境变量。
 安装包地址：https://github.com/gohugoio/hugo/releases
 添加环境变量后，命令行输入 hugo version，显示hugo版本表明安装成功。
-![image (1)](C:\Users\tencent_v_adjhuang\Documents\zhijiblog\static\images\image (1).png)
+![image (1)](images\image (1).png)
 安装完hugo之后，还需要安装git，因为博客安放在github.io的服务器上。
 git安装教程：https://www.cnblogs.com/xueweisuoyong/p/11914045.html
 安装完git和hugo之后，将zhijiblog文件夹复制到你的电脑上，就完成了博客后台搭建的全部任务。
