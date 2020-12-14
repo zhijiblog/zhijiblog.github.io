@@ -6,17 +6,7 @@
     <description>Recent content on 知几小博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Dec 2020 16:20:03 +0800</lastBuildDate><atom:link href="https://zhijiblog.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>对话分析</title>
-      <link>https://zhijiblog.github.io/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/%E5%AF%B9%E8%AF%9D%E5%88%86%E6%9E%90/%E5%AF%B9%E8%AF%9D%E5%88%86%E6%9E%90/</link>
-      <pubDate>Mon, 14 Dec 2020 16:20:03 +0800</pubDate>
-      
-      <guid>https://zhijiblog.github.io/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/%E5%AF%B9%E8%AF%9D%E5%88%86%E6%9E%90/%E5%AF%B9%E8%AF%9D%E5%88%86%E6%9E%90/</guid>
-      <description>2.1 环境搭建 目前运用朴素贝叶斯实现的文本分类框架有很多，例如TextBlob、SnowNLP、PaddleHub等。本次项目使用了SnowNLP这个框架。因为这个框架是针对中文文本编写的，且使用起来比较方便。SnowNLP的源码参见https://github.com/isnowfy/snownlp。
-具体使用框架的时候，首先需要获取业务类语料库和闲聊类语料库。*该项目使用的语料库是从有记录以来，所有的已分类好的提问记录。其中业务类包含*437246条真实语料，闲聊类包含149636条真实语料**。这两个语料库需要分成两个txt文件保存至项目目录下：</description>
-    </item>
-    
+    <lastBuildDate>Mon, 14 Dec 2020 15:01:56 +0800</lastBuildDate><atom:link href="https://zhijiblog.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>环境配置</title>
       <link>https://zhijiblog.github.io/nlp/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
