@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>环境配置 on 知几小博客</title>
+    <link>https://zhijiblog.github.io/nlp/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+    <description>Recent content in 环境配置 on 知几小博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Dec 2020 15:01:55 +0800</lastBuildDate><atom:link href="https://zhijiblog.github.io/nlp/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>环境配置</title>
+      <link>https://zhijiblog.github.io/nlp/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 14 Dec 2020 15:01:56 +0800</pubDate>
+      
+      <guid>https://zhijiblog.github.io/nlp/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
+      <description>知几小博客网址：https://zhijiblog.github.io/
+一、环境部署 本博客使用Hugo框架进行搭建，需要预先安装Hugo框架并添加至环境变量。
+安装包地址：https://github.com/gohugoio/hugo/releases
+添加环境变量后，命令行输入 hugo version，显示hugo版本表明安装成功。
+![image (1)](C:\Users\tencent_v_adjhuang\Downloads\image (1).png)
+安装完hugo之后，还需要安装git，因为博客安放在github.io的服务器上。
+git安装教程：https://www.cnblogs.com/xueweisuoyong/p/11914045.html
+安装完git和hugo之后，将zhijiblog文件夹复制到你的电脑上，就完成了博客后台搭建的全部任务。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -17,30 +17,32 @@
 一、环境部署 本博客使用Hugo框架进行搭建，需要预先安装Hugo框架并添加至环境变量。
 安装包地址：https://github.com/gohugoio/hugo/releases
 添加环境变量后，命令行输入 hugo version，显示hugo版本表明安装成功。
+![image (1)](C:\Users\tencent_v_adjhuang\Downloads\image (1).png)
 安装完hugo之后，还需要安装git，因为博客安放在github.io的服务器上。
 git安装教程：https://www.cnblogs.com/xueweisuoyong/p/11914045.html
 安装完git和hugo之后，将zhijiblog文件夹复制到你的电脑上，就完成了博客后台搭建的全部任务。
 二、添加博客 ​	打开本地博客文件夹，双击 create_blog.bat 脚本，添加一篇新的博客。
 ​	首先选择博客所在的模块：
+![image (2)](C:\Users\tencent_v_adjhuang\Downloads\image (2).png)
 ​	然后输入该模块和博客的名称
+![image (3)](C:\Users\tencent_v_adjhuang\Downloads\image (3).png)
 ​	按下回车，即在本地添加了一篇空的博客。路径为zhijiblog\content\模块名\博客名\博客名.md
+![image (4)](C:\Users\tencent_v_adjhuang\Downloads\image (4).png)
 ​	双击进入编辑，推荐使用Typora编辑markdown文件，也可使用腾讯文档导出markdown格式。
+![image (5)](C:\Users\tencent_v_adjhuang\Downloads\image (5).png)
 ​	保存关闭之后，运行根目录下的post脚本，将本地的博客上传至服务器。
+![image (6)](C:\Users\tencent_v_adjhuang\Downloads\image (6).png)
 ​	脚本运行中会跳出github的登陆界面：
+![image (7)](C:\Users\tencent_v_adjhuang\Downloads\image (7).png)
 ​	用户名：zhijiblog@126.com
 ​	密码：zhijizhiji123
 ​	点击login之后，还需要再登陆一次。注意这里的username是zhijiblog，密码保持一致
+![image (8)](C:\Users\tencent_v_adjhuang\Downloads\image (8).png)
+![image (9)](C:\Users\tencent_v_adjhuang\Downloads\image (9).png)
 ​	至此，提交完成。登录博客主页即可看到新博文。
+![image (10)](C:\Users\tencent_v_adjhuang\Downloads\image (10).png)
 三、修改博客 ​	修改一篇已经上传的博客，需要在本地打开md格式的博文进行修改，路径为zhijiblog\content\模块名\博客名\博客名.md
-​	保存关闭，按（二）中的post脚本方法提交，网页版的博客就能看到修改后的博客
-四、删除博客 ​	删除一篇博客，需要首先在本地将该博文删除，路径为zhijiblog\content\模块名\博文名
-​	需要注意的是，每篇博文在本地都以一个文件夹的形式存在，需要将这篇文章所在的整个文件夹删除而不是只删除一个md文件。
-​	删除之后，按（二）中方法使用post脚本上传至服务器，即完成删除操作。
-​	可以看到，更新后原有的博文被成功删除。
-五、新增模块 ​	增加一个新的模块需要三个步骤。
- 首先需要在content文件夹里新建一个文件夹，文件夹的名字就起做模块名。下面以新增“心得分享”模块为例示意。  在根目录下找到config.toml文件，用文本编辑器打开  按照上面的格式，复制出一个新的代码块：
-url和name改成模块名，weight权重代表了展示在目录里的顺序，权重大的出现在目录的下面。修改完成后保存关闭。
-要在新模块中按（二）里的方法添加一篇博文，之后运行post脚本，上传至服务器。  六、修改和删除模块 ​	修改和删除一个已经存在的模块，和上面的过程是互逆的，首先需要将本地文件夹的名称修改或直接删除，接着在根目录下的config.toml文件做相应的修改。最后使用post脚本提交。</description>
+![image (11)](C:\Users\tencent_v_adjhuang\Downloads\image (11).</description>
     </item>
     
   </channel>
